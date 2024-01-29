@@ -51,6 +51,12 @@ You can also pass classes to your icon components:
 <x-lucide-album class="w-6 h-6 text-gray-500"/>
 ```
 
+This is how you can change the stroke width:
+
+```blade
+<x-lucide-server stroke-width="1"/>
+```
+
 And even use inline styles:
 
 ```blade
