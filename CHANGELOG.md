@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/Technikermathe/blade-lucide-icons/compare/v2.48.0...v3.0.0) (2024-02-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* Support Laravel v11
+
+### Features
+
+* Support Laravel v11 ([0e090dd](https://github.com/Technikermathe/blade-lucide-icons/commit/0e090dd606b571bf88cc023e01586c9b3d4ab923))
+
 ## [2.48.0](https://github.com/Technikermathe/blade-lucide-icons/compare/v2.47.0...v2.48.0) (2024-02-06)
 
 
