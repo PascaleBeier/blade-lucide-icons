@@ -2,7 +2,12 @@
     "name": "technikermathe/blade-lucide-icons",
     "description": "A package to easily make use of Lucide icons in your Laravel Blade views.",
     "license": "MIT",
-    "keywords": ["Blade", "Heroicons", "Laravel", "LucideIcons"],
+    "keywords": [
+        "Blade",
+        "Heroicons",
+        "Laravel",
+        "LucideIcons"
+    ],
     "authors": [
         {
             "name": "Dan Pock",
@@ -17,10 +22,10 @@
     "require": {
         "php": "^8.1",
         "blade-ui-kit/blade-icons": "^1.6",
-        "illuminate/support": "^9.0|^10.0|^11.0"
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
         "phpunit/phpunit": "^9.0|^10.0|^11.0",
         "spatie/phpunit-snapshot-assertions": "^4.2.14|^5.0|^6.0"
     },
