@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.117.0](https://github.com/PascaleBeier/blade-lucide-icons/compare/v3.116.0...v3.117.0) (2025-08-02)
+
+
+### Features
+
+* **icons:** Update Lucide to https://github.com/lucide-icons/lucide/releases/tag/0.536.0 ([9dd1b78](https://github.com/PascaleBeier/blade-lucide-icons/commit/9dd1b782aa1c096c41ab73d05d706806bdd87aea))
+
 ## [3.116.0](https://github.com/PascaleBeier/blade-lucide-icons/compare/v3.115.0...v3.116.0) (2025-08-01)
 
 
