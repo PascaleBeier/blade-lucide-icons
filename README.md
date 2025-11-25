@@ -21,12 +21,12 @@ For a full list of available icons see [the SVG directory](resources/svg) or pre
 
 ## Compatibility Matrix
 
-| Laravel  | PHP 8.1 | PHP 8.2 | PHP 8.3 | PHP 8.4 |
-|----------|--------|--------|--------|--------|
-| 9.x      | ✅      | ✅      | ⚠️      | ❌      |
-| 10.x     | ✅      | ✅      | ✅      | ⚠️      |
-| 11.x     | ⚠️      | ✅      | ✅      | ✅      |
-| 12.x     | ❌      | ✅      | ✅      | ✅      |
+| Laravel  | PHP 8.1 | PHP 8.2 | PHP 8.3 | PHP 8.4 | PHP 8.5 |
+|----------|--------|--------|--------|--------|--------|
+| 9.x      | ✅      | ✅      | ⚠️      | ❌      | ❌      |
+| 10.x     | ✅      | ✅      | ✅      | ⚠️      | ⚠️      |
+| 11.x     | ⚠️      | ✅      | ✅      | ✅      | ✅      |
+| 12.x     | ❌      | ✅      | ✅      | ✅      | ✅      |
 
 ✅ Supported  
 ⚠️ Partially supported / Requires testing  
@@ -95,6 +95,10 @@ Then use them in your views like:
 ```blade
 <img src="{{ asset('vendor/blade-lucide-icons/cloud-moon.svg') }}" width="10" height="10"/>
 ```
+
+## Use in Filament
+
+For integration with [Filament](https://filamentphp.com/), check out the dedicated [filament-lucide-icons](https://github.com/CodeWithDennis/filament-lucide-icons) package by [Dennis Koch](https://github.com/CodeWithDennis).
 
 ## Changelog
 
