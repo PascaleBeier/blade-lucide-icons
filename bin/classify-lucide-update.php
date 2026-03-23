@@ -189,6 +189,7 @@ fwrite(STDOUT, $summary."\n");
 if (is_string($githubOutput) && $githubOutput !== '') {
     writeGithubOutput($githubOutput, 'has_changes', $hasChanges ? 'true' : 'false');
     writeGithubOutput($githubOutput, 'release_type', $releaseType);
+    writeGithubOutput($githubOutput, 'commit_message', $commitMessage);
     writeGithubOutput($githubOutput, 'commit_subject', $subject);
     writeGithubOutput($githubOutput, 'message_file', $messageFile);
 }

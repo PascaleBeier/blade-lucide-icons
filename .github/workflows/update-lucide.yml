@@ -99,4 +99,4 @@ jobs:
         uses: EndBug/add-and-commit@v10
         with:
           add: lucide resources/svg tests/__snapshots__
-          message-file: ${{ steps.classify.outputs.message_file }}
+          message: ${{ steps.classify.outputs.commit_message }}
