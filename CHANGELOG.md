@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.142.1](https://github.com/PascaleBeier/blade-lucide-icons/compare/v3.142.0...v3.142.1) (2026-03-23)
+
+
+### Bug Fixes
+
+* Laravel 13.x Compatibility ([eb04410](https://github.com/PascaleBeier/blade-lucide-icons/commit/eb04410d7d47dd5c44c7f2175e31f7db3dac251f)), closes [#198](https://github.com/PascaleBeier/blade-lucide-icons/issues/198)
+
 ## [3.142.0](https://github.com/PascaleBeier/blade-lucide-icons/compare/v3.141.0...v3.142.0) (2026-03-05)
 
 
