@@ -77,7 +77,7 @@ jobs:
         run: php vendor/bin/blade-icons-generate
 
       - name: Update Snapshots
-        run: vendor/bin/phpunit -d --update-snapshots
+        run: vendor/bin/phpunit --update-snapshots
 
       - name: Run Tests
         run: vendor/bin/phpunit
