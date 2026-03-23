@@ -76,10 +76,7 @@ jobs:
       - name: Run Generator
         run: php vendor/bin/blade-icons-generate
 
-      - name: Update Snapshots
-        run: vendor/bin/phpunit --update-snapshots
-
-      - name: Run Tests
+      - name: Refresh Snapshots and Run Tests
         run: vendor/bin/phpunit
         
       - name: Restore original composer.json

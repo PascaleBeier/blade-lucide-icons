@@ -58,3 +58,5 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/phpunit
+        env:
+          CREATE_SNAPSHOTS: false
