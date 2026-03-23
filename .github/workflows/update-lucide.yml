@@ -5,15 +5,19 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+permissions:
+  contents: write
+
 jobs:
   check_versions:
     runs-on: ubuntu-latest
     outputs:
+      current: ${{ steps.current-version.outputs.CURRENT_VERSION }}
       latest: ${{ steps.latest-version.outputs.LATEST_VERSION }}
       up_to_date: ${{ steps.current-version.outputs.CURRENT_VERSION == steps.latest-version.outputs.LATEST_VERSION }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
@@ -41,7 +45,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.PAT }}
           submodules: recursive
@@ -49,14 +53,19 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: '8.4'
           extensions: dom, curl, libxml, mbstring, zip
           coverage: none
 
       - name: Install dependencies
         run: |
-          composer require illuminate/contracts "^10.0" --prefer-dist --no-interaction --no-update
+          composer require illuminate/contracts "^13.0" --prefer-dist --no-interaction --no-update
           composer update --prefer-dist --no-interaction --no-progress
+
+      - name: Snapshot current icons
+        run: |
+          mkdir -p "$RUNNER_TEMP/icons-before"
+          cp -R resources/svg/. "$RUNNER_TEMP/icons-before"/
 
       - name: Update Submodule
         run: |
@@ -77,7 +86,20 @@ jobs:
         run: |
           composer remove illuminate/contracts --no-interaction
 
-      - name: Commit Changes
-        uses: EndBug/add-and-commit@v9
+      - name: Classify icon changes
+        id: classify
+        run: |
+          php bin/classify-lucide-update.php \
+            --before="$RUNNER_TEMP/icons-before" \
+            --after="resources/svg" \
+            --current-version="${{ needs.check_versions.outputs.current }}" \
+            --latest-version="${{ needs.check_versions.outputs.latest }}" \
+            --message-file="$RUNNER_TEMP/lucide-update-commit-message.txt" \
+            --github-output="$GITHUB_OUTPUT" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push changes
+        if: ${{ steps.classify.outputs.has_changes == 'true' }}
+        uses: EndBug/add-and-commit@v10
         with:
-          message: "feat(icons): Update Lucide to https://github.com/lucide-icons/lucide/releases/tag/${{ needs.check_versions.outputs.latest }}"
+          add: lucide resources/svg tests/__snapshots__
+          message-file: ${{ steps.classify.outputs.message_file }}

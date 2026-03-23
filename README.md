@@ -21,12 +21,13 @@ For a full list of available icons see [the SVG directory](resources/svg) or pre
 
 ## Compatibility Matrix
 
-| Laravel  | PHP 8.1 | PHP 8.2 | PHP 8.3 | PHP 8.4 | PHP 8.5 |
-|----------|--------|--------|--------|--------|--------|
-| 9.x      | ✅      | ✅      | ⚠️      | ❌      | ❌      |
-| 10.x     | ✅      | ✅      | ✅      | ⚠️      | ⚠️      |
-| 11.x     | ⚠️      | ✅      | ✅      | ✅      | ✅      |
-| 12.x     | ❌      | ✅      | ✅      | ✅      | ✅      |
+| Laravel | PHP 8.1 | PHP 8.2 | PHP 8.3 | PHP 8.4 | PHP 8.5 |
+|---------|---------|---------|---------|---------|---------|
+| 9.x     | ✅       | ✅       | ⚠️      | ❌       | ❌       |
+| 10.x    | ✅       | ✅       | ✅       | ⚠️      | ⚠️      |
+| 11.x    | ⚠️      | ✅       | ✅       | ✅       | ✅       |
+| 12.x    | ❌       | ✅       | ✅       | ✅       | ✅       |
+| 13.x    | ❌       | ❌       | ✅       | ✅       | ✅       |
 
 ✅ Supported  
 ⚠️ Partially supported / Requires testing  
@@ -103,6 +104,16 @@ For integration with [Filament](https://filamentphp.com/), check out the dedicat
 ## Changelog
 
 Check out the [CHANGELOG](CHANGELOG.md) in this repository for all the recent changes.
+
+## Automated Lucide Updates
+
+The nightly Lucide sync is semver-aware and still relies on Release Please for tagging and changelog generation.
+
+- If Lucide only adds new icons or changes existing SVGs, the updater commits a `feat(icons): ...` change so Release Please creates a minor release.
+- If Lucide removes or renames icons, the updater commits a `feat!: ...` change with a `BREAKING CHANGE:` footer so Release Please creates a major release.
+- If the upstream release does not change the generated Blade icon set, the updater skips the commit entirely.
+
+This keeps the package version aligned with the actual public surface area of the exported icon components instead of treating every upstream tag the same.
 
 ## Maintainers
 
