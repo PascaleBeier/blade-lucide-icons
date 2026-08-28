@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.170.0](https://github.com/PascaleBeier/blade-lucide-icons/compare/v3.169.0...v3.170.0) (2026-08-28)
+
+
+### Features
+
+* **icons:** sync Lucide to 1.35.0 ([53a1dd0](https://github.com/PascaleBeier/blade-lucide-icons/commit/53a1dd04cd36bf8fc9300b09cdb39488583e945a))
+
 ## [3.169.0](https://github.com/PascaleBeier/blade-lucide-icons/compare/v3.168.0...v3.169.0) (2026-08-25)
 
 
